@@ -28,8 +28,7 @@ third:	run uHTR setup
 
 fourth:	send ECR and OCR
 
-That's it!  No triggers should be sent.
-
+fifth: send trigger and dump prescaled events in batches
 
 [2] Required Working Tools:
     AMC13Tool2.exe
@@ -61,10 +60,22 @@ That's it!  No triggers should be sent.
    3d. Change initial bits of uHTR IP addresses (if necessary)
 4. Run script from directory with LocalTrigBuild.py. (To use options, see [5]) To run with defaults: 
    > ./LocalTrigBuild
+   Running default is the same as using:
+   > ./LocalTrigBuild -b 100 -e 200 -p 13 -t "b 1 150"
 
 [5] Options:
-  Options not yet supported. To be added soon
-
+   5a. -b <int>
+       Set batch size to <int> (script waits until at least <int> triggers sent before pasuing triggers and dumping events and then continue receiving events)
+   5b. -e <int>
+       Total number of events dumped before ending program set to <int>
+   5c. -p <int>
+       Prescale # of 0s set to <int> (monitor buffer only saves events with <int> lowest bits equal to 0 (min 5, max 20). 0 sets mega monitoring off)
+   5d. -t <string>
+       trigger setting made with AMC13Tool2 command 'localL1A <string>'
+   5e. -l 
+       Use IPs in UHTR_LIST in systemVars.py instead of slot number defaults
+   5f. -r
+       Reload amc13 at start of program (not recommended). Should only be used by experts 
 
  Additional Warnings/Notes:
 
