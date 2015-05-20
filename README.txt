@@ -36,12 +36,15 @@ fifth: send trigger and dump prescaled events in batches
 
 [3] Required Scripts/Files (Included):
 
-	 LocalTrigBuild.py
+	 crateTest2Local.py
 	 systemVars.py
 
 	 amcEvnOrnReset.txt
 	 amcLinkDisable.txt
 	 amcReload.txt
+	 amcStatus.txt
+	 amcTrigStop.txt
+	 amcTrigStart.txt
 	 checkDAQ.uhtr
 	 clockLumi.sh
 	 daqcheck.sh
@@ -59,9 +62,9 @@ fifth: send trigger and dump prescaled events in batches
    3c. Change the uhtr slot  to a list of integers (1-based) corresponding to the AMC slots of the uHTRs that you will be using for the test
    3d. Change initial bits of uHTR IP addresses (if necessary)
 4. Run script from directory with LocalTrigBuild.py. (To use options, see [5]) To run with defaults: 
-   > ./LocalTrigBuild
-   Running default is the same as using:
-   > ./LocalTrigBuild -b 100 -e 200 -p 13 -t "b 1 150"
+   > ./crateTest2Local.py
+   Running default is the same as using following options:
+   > ./crateTest2Local.py -b 100 -e 200 -p 13 -t "b 1 150"
 
 [5] Options:
    5a. -b <int>
