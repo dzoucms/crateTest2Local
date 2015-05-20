@@ -80,8 +80,28 @@ fifth: send trigger and dump prescaled events in batches
    5f. -r
        Reload amc13 at start of program (not recommended). Should only be used by experts 
 
+*** Note that the actual total events per batch (-b) or per run of program (-e) will likely be larger than the specificed amount since events may be collected and built during the time it takes to stop triggers
+
+
+[6] Output files (saved to Run_<timestamp>/results directory):
+       dump*.dat
+       amcInitStat.txt
+       amcEndStat*.txt
+       (* indicates a number corresponding to the batch_no)
+       htrDaqStatInit**.txt
+       htrDaqStatB4Trig**.txt
+       (** indicates the number correspoding to the IP address of the corresponding uHTR)
+
  Additional Warnings/Notes:
 
 A number of temporary files are created during the test and stored in
 the tmp directory included in the build, do not be alarmed to see
 these appear
+
+
+[7] Temp Scripts/Files created by CrateTest.py (saved to Run_<timestamp>/tmp directory):
+     daqcheck.txt
+     dumpFile.txt
+     evtStatus.txt
+     prepAMC.txt	 
+
